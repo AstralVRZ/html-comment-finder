@@ -1,16 +1,22 @@
 {
     "manifest_version": 3,
-    "name": "Firefox HTML Comments Finder",
+    "name": "HTML Comments Finder",
     "description": "Finds HTML comments in the current page",
-    "homepage_url": "https://github.com/AstralVRZ/firefox-html-comment-finder",
+    "homepage_url": "https://github.com/AstralVRZ/html-comment-finder",
     "version": "1.0",
     "permissions": ["activeTab"],
     "background": {
         "page": "bg.html"
       },
+
+    "browser_specific_settings": {
+      "gecko": {
+        "id": "CommentFinder@example.com"
+      }
+    },
   
     "icons": {
-      "48": "images/eye_open.png"
+      "128": "images/eye_open.png"
     },
   
     "action": {
