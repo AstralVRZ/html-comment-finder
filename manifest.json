@@ -1,28 +1,25 @@
 {
-  "name": "HTML Comments Finder",
-  "description": "Finds HTML comments in the current page",
-  "version": "1.0.1",
-  "manifest_version": 3,
-  "homepage_url": "https://github.com/dimdenGD/html-comment-finder",
-  "background": {
-    "service_worker": "background.js"
-  },
-  "permissions": ["activeTab"],
-  "icons": {
-    "128": "/images/eye_open.png"
-  },
-  "action": {
-    "default_icon": {
-      "128": "/images/eye_closed.png"
+    "manifest_version": 3,
+    "name": "Firefox HTML Comments Finder",
+    "description": "Finds HTML comments in the current page",
+    "version": "1.0",
+    "permissions": ["activeTab"],
+    "background": {
+        "page": "bg.html"
+      },
+  
+    "icons": {
+      "48": "images/eye_closed.png"
     },
-    "default_title": "See HTML comments",
-    "default_popup": "popup.html"
-  },
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["content_script.js"],
-      "run_at": "document_idle"
-    }
-  ]
-}
+  
+    "action": {
+        "default_popup": "popup.html"
+      },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content_script.js"]
+      }
+    ]
+  }
+  
