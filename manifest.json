@@ -2,6 +2,7 @@
     "manifest_version": 3,
     "name": "Firefox HTML Comments Finder",
     "description": "Finds HTML comments in the current page",
+    "homepage_url": "https://github.com/AstralVRZ/firefox-html-comment-finder",
     "version": "1.0",
     "permissions": ["activeTab"],
     "background": {
