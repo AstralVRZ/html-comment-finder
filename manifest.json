@@ -5,6 +5,7 @@
     "homepage_url": "https://github.com/AstralVRZ/html-comment-finder",
     "version": "1.0",
     "permissions": ["activeTab"],
+    "host_permissions": ["*://*/*"],
     "background": {
         "page": "bg.html"
       },
