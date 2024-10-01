@@ -12,12 +12,12 @@ let commentsElement = document.getElementById('comments');
     let comments = await browser.tabs.sendMessage(tab.id, { action: "get" });
     if(!comments) comments = [];
     
-    noComments.hidden = comments.length > 0;
+    noComments.hidden = comments.length >= 1;
     commentsElement.innerHTML = "";
 
     for(let comment of comments) {
         let li = document.createElement('li');
-        li.innerText = comment;
+        li.innerHTML = comment;
         commentsElement.appendChild(li);
     }
 })();
