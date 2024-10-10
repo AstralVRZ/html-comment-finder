@@ -9,15 +9,23 @@ let commentsElement = document.getElementById('comments');
 
 (async () => {
     let tab = await getCurrentTab();
-    let comments = await browser.tabs.sendMessage(tab.id, { action: "get" });
+    let comments = [];
+    try {
+        comments = await browser.tabs.sendMessage(tab.id, { action: "get" });
+    } catch (error) {
+        console.error("An error occurred:", error);
+    }
+    
     if(!comments) comments = [];
     
-    noComments.hidden = comments.length > 0;
-    commentsElement.innerHTML = "";
-
-    for(let comment of comments) {
-        let li = document.createElement('li');
-        li.innerText = comment;
-        commentsElement.appendChild(li);
+    if (comments.length === 0) {
+        noComments.hidden = false;
+    } else {
+        commentsElement.innerHTML = "";
+        for(let comment of comments) {
+            let li = document.createElement('li');
+            li.innerHTML = comment;
+            commentsElement.appendChild(li);
+        }
     }
 })();

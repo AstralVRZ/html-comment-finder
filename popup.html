@@ -1,23 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Comment Finder</title>
-    <style>
-        h1 {
-            width: 400px;
-        }
-        body {
-            padding-bottom: 10px;
-        }
-    </style>
-</head>
-<body>
-    <h1>HTML Comment Finder</h1>
-    <p id="no-comments" hidden>No comments found.</p>
-    <div id="comments"></div>
-    <script src="popup.js"></script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HTML Comment Finder</title>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                max-width: 460px;
+                font-size: 1.25rem;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                margin: 0 auto;
+                background-color: #f9f9f9;
+                color: #333333;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 16px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+            }
+
+            h1 {
+                max-width: 420px;
+                font-size: 2rem;
+                margin-bottom: 16px;
+                color: #0078d4;
+                text-align: center;
+                border-bottom: 3px solid #0078d4;
+                padding-bottom: 8px;
+            }
+
+            #comments {
+                width: 380px;
+                margin-top: 20px;
+            }
+
+            #no-comments {
+                font-size: 1rem;
+                color: #888;
+                text-align: center;
+            }
+
+            @media (prefers-color-scheme: dark) {
+                body {
+                    background-color: #1e1e1e;
+                    color: #ffffff;
+                }
+
+                h1 {
+                    color: #1a73e8;
+                    border-bottom: 3px solid #1a73e8;
+                }
+
+                #no-comments {
+                    color: #aaa;
+                }
+            }
+
+            @media (prefers-color-scheme: light) {
+                body {
+                    background-color: #f9f9f9;
+                    color: #333;
+                }
+
+                h1 {
+                    color: #0078d4;
+                    border-bottom: 3px solid #0078d4;
+                }
+
+                #no-comments {
+                    color: #888;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>HTML Comment Finder</h1>
+        <span id="no-comments" hidden>There were no comments found on this page!</span>
+        <ol id="comments">
+            
+        </ol>
+        <script src="popup.js"></script>
+    </body>
 </html>
