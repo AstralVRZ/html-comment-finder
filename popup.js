@@ -13,7 +13,7 @@ let commentsElement = document.getElementById('comments');
     try {
         comments = await browser.tabs.sendMessage(tab.id, { action: "get" });
     } catch (error) {
-        console.error("Error: Could not establish connection. Receiving end does not exist.", error);
+        console.error("An error occurred:", error);
     }
     
     if(!comments) comments = [];
