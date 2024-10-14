@@ -24,7 +24,7 @@ let commentsElement = document.getElementById('comments');
         commentsElement.innerHTML = "";
         for(let comment of comments) {
             let li = document.createElement('li');
-            li.innerHTML = comment;
+            li.innerText = comment;
             commentsElement.appendChild(li);
         }
     }

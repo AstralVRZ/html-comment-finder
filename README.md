@@ -10,4 +10,4 @@ This version is compatible with Firefox *not chrome!* While I can't vouch for it
 
 ### Screenshots
 
-<img src="https://raw.githubusercontent.com/aRandomMenno/comment-finder-html/refs/heads/main/images/sreenshot_firefox.png" alt="Screenshot_Firefox" style="max-width: 400px;">
+<img src="images/sreenshot_firefox.png" alt="Screenshot_Firefox" style="max-width: 400px;">
