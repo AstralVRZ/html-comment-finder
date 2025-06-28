@@ -1,33 +1,40 @@
 {
     "manifest_version": 3,
-    "name": "HTML Comments Finder",
-    "description": "Finds HTML comments in the current page",
+    "name": "Comment Finder",
+    "description": "Finds all HTML, CSS and JavaScript comments on a webpage.",
     "homepage_url": "https://github.com/AstralVRZ/html-comment-finder",
-    "version": "1.2",
-    "permissions": ["activeTab"],
-    "host_permissions": ["*://*/*"],
+    "version": "2.1",
+    "permissions": [
+        "activeTab"
+    ],
+    "host_permissions": [
+        "*://*/*"
+    ],
     "background": {
         "page": "background.html"
-      },
-
+    },
     "browser_specific_settings": {
-      "gecko": {
-        "id": "CommentFinder@astralvrz.github.io"
-      }
+        "gecko": {
+            "id": "CommentFinder@astralvrz.gitub.io"
+        }
     },
-  
     "icons": {
-      "128": "images/eye_open.png"
+        "128": "assets/images/no_comments_found.png"
     },
-  
     "action": {
         "default_popup": "popup.html"
-      },
+    },
     "content_scripts": [
-      {
-        "matches": ["<all_urls>"],
-        "js": ["extension.js"]
-      }
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "assets/js/html_comments.js",
+                "assets/js/css_comments.js",
+                "assets/js/js_comments.js",
+                "assets/js/extension.js"
+            ]
+        }
     ]
-  }
-  
+}
