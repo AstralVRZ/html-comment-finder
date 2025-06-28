@@ -19,7 +19,7 @@
         }
     },
     "icons": {
-        "128": "assets/images/no_comments_found.png"
+        "128": "assets/images/comments_found.png"
     },
     "action": {
         "default_popup": "popup.html"
