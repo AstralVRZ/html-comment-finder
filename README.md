@@ -31,3 +31,15 @@ This extension is a fork of a fork of the original: [HTML Comment Finder](https:
 ## Showcase
 
 <img src="images/showcase.png" alt="Showcasing the image" style="max-width: 500px;">
+
+## Features
+
+- [x] Find HTML comments.
+- [x] Display comments in a popup when the extension icon is clicked.
+- [x] Display the number of comments found on the extension icon.
+- [X] Find CSS comments.
+- [X] Find JavaScript comments.
+- [ ] Improve the UI of the popup.
+- [ ] Add a settings page to customize the extension.
+- [ ] Add a search feature to find specific comments.
+- [ ] Add a feature to copy comments to the clipboard.

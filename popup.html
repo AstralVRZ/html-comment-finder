@@ -1,18 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>HTML Comment Finder</title>
-        <link rel="stylesheet" href="assets/css/styles.css">
-    </head>
-    <body>
-        <h1>HTML Comment Finder</h1>
-        <span id="no-comments" hidden>There were no comments found on this page!</span>
-        <ol id="comments">
-            
-        </ol>
-        <script src="assets/js/popup.js"></script>
-    </body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Comment Finder</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <h1>Comment Finder</h1>
+    <p class="bugs">
+        <strong>Know bug</strong>: always shows "No HTML/CSS/JS comments found on this page!" even if there are
+        comments. that's why it is below all comments.
+    </p>
+
+    <div class="tab-container">
+        <div class="tab-buttons">
+            <button class="tab-button active" data-tab="html">HTML Comments</button>
+            <button class="tab-button" data-tab="css">CSS Comments</button>
+            <button class="tab-button" data-tab="js">JS Comments</button>
+        </div>
+
+        <div class="tab-content">
+            <div id="html-tab" class="tab-panel active">
+                <ol id="html-comments" class="comment-list"></ol>
+                <span id="no-html-comments" class="no-comments" hidden>No HTML comments found on this page!</span>
+            </div>
+
+            <div id="css-tab" class="tab-panel">
+                <table id="css-comments" class="css-table">
+                    <thead>
+                        <tr>
+                            <th>Comment</th>
+                            <th>Source</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <span id="no-css-comments" class="no-comments" hidden>No CSS comments found on this page!</span>
+            </div>
+
+            <div id="js-tab" class="tab-panel">
+                <table id="js-comments" class="css-table">
+                    <thead>
+                        <tr>
+                            <th>Comment</th>
+                            <th>Source</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <span id="no-js-comments" class="no-comments" hidden>No JS comments found on this page!</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/popup.js"></script>
+</body>
+
 </html>

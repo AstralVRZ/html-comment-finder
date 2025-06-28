@@ -1,71 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root {
+    --primary-color: #2ca4ff;
+    --secondary-color: #04479e;
+    --background-color: #202020;
+    --text-color: #ffffff;
+    --text-secondary-color: #b0b0b0;
+    --border-radius: 0.5em;
+    --border-color: #444;
+}
+
 * {
     box-sizing: border-box;
 }
 
 body {
-    max-width: 460px;
+    width: 500px;
     font-size: 1rem;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Lato', sans-serif;
     margin: 0 auto;
-    background-color: #f9f9f9;
-    color: #333333;
+    background-color: var(--background-color);
+    color: var(--text-color);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 16px;
+    padding: 0.5em;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
 
 h1 {
-    max-width: 420px;
     font-size: 2rem;
-    margin-bottom: 16px;
-    color: #0078d4;
+    margin-bottom: 0.5em;
+    color: var(--primary-color);
     text-align: center;
-    border-bottom: 3px solid #0078d4;
-    padding-bottom: 8px;
+    border-bottom: 0.125em solid var(--secondary-color);
+    padding-bottom: 0.5em;
 }
 
-#comments {
-    width: 380px;
-    margin-top: 20px;
+.bugs {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    margin-bottom: 1em;
+    text-align: center;
 }
 
-#no-comments {
+.tab-container {
+    width: 100%;
+    margin-top: 1em;
+}
+
+.tab-buttons {
+    display: flex;
+    border-bottom: 2px solid var(--secondary-color);
+    margin-bottom: 1em;
+}
+
+.tab-button {
+    background: none;
+    border: none;
+    padding: 0.75em 1em;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.tab-button:hover {
+    background-color: rgba(44, 164, 255, 0.1);
+}
+
+.tab-button.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+.tab-content {
+    width: 100%;
+}
+
+.tab-panel {
+    display: none;
+    width: 100%;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+.comment-list {
+    width: 100%;
+    padding-left: 2em;
+}
+
+.comment-list li {
+    margin-bottom: 0.5em;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+.comment-list li::marker {
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.css-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5em;
+}
+
+.css-table th,
+.css-table td {
+    padding: 0.5em;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    word-wrap: break-word;
+}
+
+.css-table th {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.css-table tr:nth-child(even) {
+    background-color: rgba(44, 164, 255, 0.05);
+}
+
+.css-table tr:hover {
+    background-color: rgba(44, 164, 255, 0.1);
+}
+
+.css-table .comment-cell {
+    width: 400px;
+    overflow-wrap: break-word;
+}
+
+.css-table .source-cell {
+    width: 100px;
+    font-style: italic;
+    color: var(--text-secondary-color);
+}
+
+.no-comments {
     font-size: 1rem;
-    color: #888;
+    color: var(--text-secondary-color);
     text-align: center;
+    margin-top: 1em;
+    display: block;
 }
 
 @media (prefers-color-scheme: dark) {
-    body {
-        background-color: #1e1e1e;
-        color: #ffffff;
+    :root {
+        --primary-color: #1a73e8;
+        --secondary-color: #4285f4;
+        --background-color: #1e1e1e;
+        --text-color: #ffffff;
+        --text-secondary-color: #aaa;
+        --border-color: #444;
     }
 
-    h1 {
-        color: #1a73e8;
-        border-bottom: 3px solid #1a73e8;
+    .tab-button:hover {
+        background-color: rgba(26, 115, 232, 0.1);
     }
 
-    #no-comments {
-        color: #aaa;
+    .css-table tr:nth-child(even) {
+        background-color: rgba(26, 115, 232, 0.05);
+    }
+
+    .css-table tr:hover {
+        background-color: rgba(26, 115, 232, 0.1);
     }
 }
 
 @media (prefers-color-scheme: light) {
-    body {
-        background-color: #f9f9f9;
-        color: #333;
+    :root {
+        --primary-color: #0078d4;
+        --secondary-color: #115cbe;
+        --background-color: #f9f9f9;
+        --text-color: #333;
+        --text-secondary-color: #888;
+        --border-color: #ddd;
     }
 
-    h1 {
-        color: #0078d4;
-        border-bottom: 3px solid #0078d4;
+    .tab-button:hover {
+        background-color: rgba(0, 120, 212, 0.1);
     }
 
-    #no-comments {
-        color: #888;
+    .css-table th {
+        color: #ffffff;
     }
+
+    .css-table tr:nth-child(even) {
+        background-color: rgba(0, 120, 212, 0.05);
+    }
+
+    .css-table tr:hover {
+        background-color: rgba(0, 120, 212, 0.1);
+    }
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url(/fonts/lato_regular.ttf);
 }

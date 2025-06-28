@@ -1,28 +1,22 @@
 /**
- * This function is a filter that accepts all nodes.
- * It is used with the NodeIterator to traverse all nodes in the document.
- * @returns {number} NodeFilter.FILTER_ACCEPT
- */
-function filterNone() {
-    return NodeFilter.FILTER_ACCEPT;
-}
-
-/**
- * This function finds all the comments in a given HTML element.
+ * This function finds all the comments in a given HTML element and CSS stylesheets.
  * @param {HTMLElement} rootElem The root element to search for comments.
- * @returns {string[]} An array of comments found in the root element.
+ * @returns {Promise<string[]>} A promise that resolves to an array of comments found in the root element and CSS.
  */
-function getAllComments(rootElem) {
+async function getAllComments(rootElem) {
     const comments = [];
-    const iterator = document.createNodeIterator(rootElem, NodeFilter.SHOW_COMMENT, filterNone, false);
 
-    let curNode;
-    while (curNode = iterator.nextNode()) {
-        const trimmedComment = curNode.nodeValue.trim();
-        if (trimmedComment.length > 0) {
-            comments.push(trimmedComment);
-        }
-    }
+    // Get HTML comments
+    const htmlComments = getAllHtmlComments(rootElem);
+    comments.push(...htmlComments);
+
+    // Get CSS comments (async)
+    const cssComments = await getAllCssComments();
+    comments.push(...cssComments);
+
+    // Get JavaScript comments (async)
+    const jsComments = await getAllJsComments();
+    comments.push(...jsComments);
 
     return comments;
 }
@@ -30,8 +24,9 @@ function getAllComments(rootElem) {
 /**
  * This is a timeout that sends a message to the background script with the comments found on the page.
  */
-setTimeout(() => {
-    browser.runtime.sendMessage({ action: "set", comments: getAllComments(document) });
+setTimeout(async () => {
+    const comments = await getAllComments(document);
+    browser.runtime.sendMessage({ action: "set", comments });
 }, 500);
 
 /**
@@ -40,6 +35,12 @@ setTimeout(() => {
  */
 browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.action === "get") {
-        sendResponse(getAllComments(document));
+        getAllComments(document).then(comments => {
+            sendResponse(comments);
+        }).catch(error => {
+            console.error("Error getting comments:", error);
+            sendResponse([]);
+        });
+        return true; // Keep the message channel open for async response
     }
 });
