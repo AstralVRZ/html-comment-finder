@@ -1,10 +1,6 @@
 # Comment Finder
 
-A simple browser extension to find HTML, CSS, and JavaScript comments on a webpage. This extension was made to fit my personal preferences and needs, so it might not be the most polished or feature-rich extension out there. However, it does the job for me. If you have any suggestions or improvements, feel free to open an issue or pull request.
-
-## How It Works
-
-This extension injects a content script into every webpage you visit. This script scans the page for HTML, CSS, and JavaScript comments. The number of comments found is then displayed on the extension's icon. When you click the icon, a popup will display all the comments found on the page.
+A simple browser extension to find HTML, CSS, and JavaScript comments on a webpage. This extension was made to fit my personal preferences and needs, so you may not like it, however I simply can't care. If you need a feature just create an issue and I might consider adding it or create a pull request with the feature implemented.
 
 ## Installation
 
@@ -39,7 +35,7 @@ This extension is a fork of a fork of the original: [HTML Comment Finder](https:
 - [x] Display the number of comments found on the extension icon.
 - [X] Find CSS comments.
 - [X] Find JavaScript comments.
+- [ ] Add a feature to copy comments to the clipboard.
 - [ ] Improve the UI of the popup.
 - [ ] Add a settings page to customize the extension.
 - [ ] Add a search feature to find specific comments.
-- [ ] Add a feature to copy comments to the clipboard.
