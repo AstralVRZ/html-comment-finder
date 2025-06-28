@@ -1,10 +1,10 @@
 # Comment Finder
 
-A simple browser extension to find HTML, CSS, and JavaScript comments on a webpage. This extension was made to fit my personal preferences and needs, so you may not like it, however I simply can't care. If you need a feature just create an issue and I might consider adding it or create a pull request with the feature implemented.
+A simple browser extension to find HTML, CSS, and JavaScript comments on a webpage. This extension was made to fit our personal preferences and needs, if you need a feature just create an issue and we might consider adding it or create a pull request with the feature implemented.
 
 ## Installation
 
-1. Get it from the addons page from mozilla (recommended).
+1. Get it from the addons page from Mozilla (recommended).
 
 You can find the extension on the [Firefox Add-ons page](https://addons.mozilla.org/en-US/firefox/addon/html-comment-finder/)
 
