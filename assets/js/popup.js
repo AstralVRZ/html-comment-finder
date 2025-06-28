@@ -125,11 +125,6 @@ function displayJsComments(jsComments) {
 (async () => {
     initializeTabs();
 
-    // Hide "no comments" messages initially
-    noHtmlComments.hidden = true;
-    noCssComments.hidden = true;
-    noJsComments.hidden = true;
-
     const tab = await getCurrentTab();
     let comments = [];
 

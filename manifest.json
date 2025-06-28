@@ -3,7 +3,7 @@
     "name": "Comment Finder",
     "description": "Finds all HTML, CSS and JavaScript comments on a webpage.",
     "homepage_url": "https://github.com/AstralVRZ/html-comment-finder",
-    "version": "2.0",
+    "version": "2.1",
     "permissions": [
         "activeTab"
     ],

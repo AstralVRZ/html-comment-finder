@@ -134,12 +134,12 @@ h1 {
 }
 
 .css-table .comment-cell {
-    width: 400px;
+    width: 350px;
     overflow-wrap: break-word;
 }
 
 .css-table .source-cell {
-    width: 100px;
+    width: 150px;
     font-style: italic;
     color: var(--text-secondary-color);
 }
@@ -148,8 +148,7 @@ h1 {
     font-size: 1rem;
     color: var(--text-secondary-color);
     text-align: center;
-    margin-top: 1em;
-    display: block;
+    margin: 0.8em;
 }
 
 @media (prefers-color-scheme: dark) {
