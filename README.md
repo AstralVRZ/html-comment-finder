@@ -6,7 +6,7 @@ A simple browser extension to find HTML, CSS, and JavaScript comments on a webpa
 
 1. Get it from the addons page from mozilla (recommended).
 
-The extension is not yet available on the Mozilla Add-ons page, since I'm still working on it. However, you can install it from source code. With the instructions below:
+You can find the extension on the [Firefox Add-ons page](https://addons.mozilla.org/en-US/firefox/addon/html-comment-finder/)
 
 2. From source code.
 
