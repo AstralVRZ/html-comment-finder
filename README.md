@@ -26,7 +26,8 @@ This extension is a fork of a fork of the original: [HTML Comment Finder](https:
 
 ## Showcase
 
-<img src="images/showcase.png" alt="Showcasing the image" style="max-width: 500px;">
+<img src="assets/images/showcase_js.png" alt="Image showing JS comments" style="max-width: 500px;">
+<img src="assets/images/showcase_html.png" alt="Image showing HTML comments" style="max-width: 500px;">
 
 ## Features
 
