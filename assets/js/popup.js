@@ -51,6 +51,9 @@ function displayHtmlComments(htmlComments) {
             const li = document.createElement("li");
             li.textContent = comment;
             htmlCommentsElement.appendChild(li);
+
+            // Update the HTML amount in the tab button
+            document.querySelector(".html-amount").textContent = `(${htmlComments.length})`;
         });
     }
 }
@@ -83,6 +86,9 @@ function displayCssComments(cssComments) {
             row.appendChild(commentCell);
             row.appendChild(sourceCell);
             tbody.appendChild(row);
+
+            // Update the CSS amount in the tab button
+            document.getElementById("css-amount").textContent = `(${cssComments.length})`;
         });
     }
 }
@@ -115,6 +121,9 @@ function displayJsComments(jsComments) {
             row.appendChild(commentCell);
             row.appendChild(sourceCell);
             tbody.appendChild(row);
+
+            // Update the JS amount in the tab button
+            document.getElementById("js-amount").textContent = `(${jsComments.length})`;
         });
     }
 }

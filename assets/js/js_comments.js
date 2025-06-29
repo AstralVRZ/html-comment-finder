@@ -58,6 +58,11 @@ function isJsContent(content) {
         return false;
     }
 
+    // Allow simple words/phrases that are clearly comments
+    if (/^[a-zA-Z\s]+$/.test(content)) {
+        return false;
+    }
+
     // Check for SVG/XML content
     const svgXmlPatterns = [
         /www\.w3\.org\/2000\/svg/, // SVG namespace
@@ -82,6 +87,8 @@ function isJsContent(content) {
         /console\.(log|error|warn|info)\s*\(/, // Console methods
         /document\.|window\./, // DOM/BOM objects
         /addEventListener|querySelector|getElementById/,
+        // Make these patterns more specific to avoid false positives
+        /^\w+\s*[\(\{]/, // Only filter if it looks like a function call/definition
     ];
 
     // Check for CSS-like content that got mixed in
